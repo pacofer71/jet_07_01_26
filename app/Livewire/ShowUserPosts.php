@@ -79,5 +79,11 @@ class ShowUserPosts extends Component
         $this->uform->cancelarForm();
         
     }
+    // Cambiar Estado
+    public function cambiarEstado(Post $post){
+        $this->authorize('update', $post);
+        $estado=$post->estado=='Publicado' ? 'Borrador' : 'Publicado';
+        $post->update(['estado'=>$estado]);
+    }
 
 }

@@ -52,11 +52,11 @@
 
                     <!-- Estado -->
                     <td class="px-6 py-4">
-                        <p @class([ 'inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold text-white' , 'bg-red-600'=> $item->estado == 'Borrador',
+                        <button @class([ 'inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold text-white' , 'bg-red-600'=> $item->estado == 'Borrador',
                             'bg-green-600' => $item->estado == 'Publicado',
-                            ])>
+                            ]) wire:click="cambiarEstado({{$item->id}})">
                             {{ $item->estado }}
-                        </p>
+                        </button>
                     </td>
 
                     <!-- Categoría -->
